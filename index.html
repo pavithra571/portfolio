@@ -116,6 +116,13 @@
   .about-body p .hl{color:var(--accent);font-weight:600}
   .about-lead{font-family:'Fraunces',serif;font-size:clamp(20px,2.4vw,26px);font-weight:400;color:var(--ink);line-height:1.45}
 
+  /* ---- project grid ---- */
+  .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  @media(max-width:780px){.project-grid{grid-template-columns:1fr}}
+  .project-grid .feature{height:100%;display:flex;flex-direction:column}
+  .project-grid .feature-inner{display:flex;flex-direction:column;flex:1}
+  .project-grid .feature-metrics{margin-top:auto}
+
   /* ---- featured project ---- */
   .feature{border:1px solid var(--ink);background:linear-gradient(180deg,var(--paper-2),var(--paper));position:relative;overflow:hidden}
   .feature-inner{padding:38px}
@@ -271,64 +278,62 @@
       <h2 class="sec-title">Featured work</h2>
       <span class="sec-rule"></span>
     </div>
+    <div class="project-grid">
 
-    <div class="feature reveal">
-      <a class="tag" href="https://kpavithra-skimr.hf.space/" target="_blank" rel="noopener">Live demo</a>
-      <div class="feature-inner">
-        <h3>Skimr — RAG Research Assistant</h3>
-        <a class="live" href="https://kpavithra-skimr.hf.space/" target="_blank" rel="noopener">● kpavithra-skimr.hf.space ↗</a>
-        <div class="shot">
-          <div class="shot-bar"><i></i><i></i><i></i><span>kpavithra-skimr.hf.space</span></div>
-          <img src="skimr_picture.png" alt="Skimr app — Ask your papers interface">
-        </div>
-        <p>A full-stack RAG application where users upload research papers and query them in natural language, getting back grounded, source-cited answers. PDF chunking, embedding generation, and semantic retrieval are orchestrated as a modular LangGraph state graph, with a Groq-hosted Llama 3.3 70B model constrained to retrieved context and an LLM guard that flags non-research uploads. Ships with bcrypt auth and per-user document isolation.</p>
-        <div class="stackline">
-          <span class="pill">LangChain</span>
-          <span class="pill">LangGraph</span>
-          <span class="pill">ChromaDB</span>
-          <span class="pill">Groq · Llama 3.3 70B</span>
-          <span class="pill">Docker</span>
-          <span class="pill">HF Spaces</span>
-        </div>
-        <div class="feature-metrics">
-          <div class="fm"><b>End-to-end</b><span>upload → retrieve → cite</span></div>
-          <div class="fm"><b>Per-user</b><span>isolated document stores</span></div>
-          <div class="fm"><b>Grounded</b><span>source-cited generation</span></div>
+      <div class="feature reveal">
+        <a class="tag" href="https://kpavithra-skimr.hf.space/" target="_blank" rel="noopener">Live demo</a>
+        <div class="feature-inner">
+          <h3>Skimr — RAG Research Assistant</h3>
+          <a class="live" href="https://kpavithra-skimr.hf.space/" target="_blank" rel="noopener">● kpavithra-skimr.hf.space ↗</a>
+          <div class="shot">
+            <div class="shot-bar"><i></i><i></i><i></i><span>kpavithra-skimr.hf.space</span></div>
+            <img src="skimr_picture.png" alt="Skimr app — Ask your papers interface">
+          </div>
+          <p>A full-stack RAG application where users upload research papers and query them in natural language, getting back grounded, source-cited answers. PDF chunking, embedding generation, and semantic retrieval are orchestrated as a modular LangGraph state graph, with a Groq-hosted Llama 3.3 70B model constrained to retrieved context and an LLM guard that flags non-research uploads. Ships with bcrypt auth and per-user document isolation.</p>
+          <div class="stackline">
+            <span class="pill">LangChain</span>
+            <span class="pill">LangGraph</span>
+            <span class="pill">ChromaDB</span>
+            <span class="pill">Groq · Llama 3.3 70B</span>
+            <span class="pill">Docker</span>
+            <span class="pill">HF Spaces</span>
+          </div>
+          <div class="feature-metrics">
+            <div class="fm"><b>End-to-end</b><span>upload → retrieve → cite</span></div>
+            <div class="fm"><b>Per-user</b><span>isolated document stores</span></div>
+            <div class="fm"><b>Grounded</b><span>source-cited generation</span></div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- COLLABORATE HUB -->
-<section id="collaboratehub" style="padding-top:0;border-bottom:none">
-  <div class="wrap" style="padding-top:0">
-    <div class="feature reveal" style="margin-top:0">
-      <a class="tag" href="https://collaborate-hub-lake.vercel.app/login" target="_blank" rel="noopener" style="background:var(--sage)">Live demo</a>
-      <div class="feature-inner">
-        <h3>CollaborateHub</h3>
-        <a class="live" href="https://collaborate-hub-lake.vercel.app/login" target="_blank" rel="noopener">● collaborate-hub-lake.vercel.app ↗</a>
-        <div class="shot">
-          <div class="shot-bar"><i></i><i></i><i></i><span>collaborate-hub-lake.vercel.app</span></div>
-          <img src="collaborate_hub_picture.png" alt="CollaborateHub — student collaboration platform">
-        </div>
-        <p>A full-stack collaboration platform where students find project partners based on their area of expertise. Users join interest-based communities, create posts seeking collaborators with specific skills, comment and like posts, and explore other users' profiles — bridging the gap between people with complementary abilities.</p>
-        <div class="stackline">
-          <span class="pill">React 19</span>
-          <span class="pill">Firebase Auth</span>
-          <span class="pill">Firestore</span>
-          <span class="pill">Firebase Storage</span>
-          <span class="pill">Express</span>
-          <span class="pill">Stripe</span>
-          <span class="pill">React Router</span>
-          <span class="pill">Vercel</span>
-        </div>
-        <div class="feature-metrics">
-          <div class="fm"><b>Auth + profiles</b><span>Firebase Auth & Firestore</span></div>
-          <div class="fm"><b>Posts & comments</b><span>real-time Firestore</span></div>
-          <div class="fm"><b>Payments</b><span>Stripe integration</span></div>
+      <div class="feature reveal">
+        <a class="tag" href="https://collaborate-hub-lake.vercel.app/login" target="_blank" rel="noopener" style="background:var(--sage)">Live demo</a>
+        <div class="feature-inner">
+          <h3>CollaborateHub</h3>
+          <a class="live" href="https://collaborate-hub-lake.vercel.app/login" target="_blank" rel="noopener">● collaborate-hub-lake.vercel.app ↗</a>
+          <div class="shot">
+            <div class="shot-bar"><i></i><i></i><i></i><span>collaborate-hub-lake.vercel.app</span></div>
+            <img src="collaborate_hub_picture.png" alt="CollaborateHub — student collaboration platform">
+          </div>
+          <p>A full-stack collaboration platform where students find project partners based on their area of expertise. Users join interest-based communities, create posts seeking collaborators with specific skills, comment and like posts, and explore other users' profiles — bridging the gap between people with complementary abilities.</p>
+          <div class="stackline">
+            <span class="pill">React 19</span>
+            <span class="pill">Firebase Auth</span>
+            <span class="pill">Firestore</span>
+            <span class="pill">Firebase Storage</span>
+            <span class="pill">Express</span>
+            <span class="pill">Stripe</span>
+            <span class="pill">React Router</span>
+            <span class="pill">Vercel</span>
+          </div>
+          <div class="feature-metrics">
+            <div class="fm"><b>Auth + profiles</b><span>Firebase Auth & Firestore</span></div>
+            <div class="fm"><b>Posts & comments</b><span>real-time Firestore</span></div>
+            <div class="fm"><b>Payments</b><span>Stripe integration</span></div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
